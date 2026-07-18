@@ -1,1371 +1,853 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JWT Task Manager App | Portfolio</title>
+  <title>JWT Task Manager App | Portfolio</title>
 
-<link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 
 <!-- =========================
- Hero Section
+     Hero Section
 ========================= -->
 
 <section class="hero">
 
-<div class="hero-content">
+  <div class="hero-content">
 
-<h1>
-📌 JWT Task Manager App
-</h1>
+    <h1>📌 JWT Task Manager App</h1>
 
-<p class="hero-subtitle">
-JWT認証付きタスク管理アプリ
-</p>
+    <p class="hero-subtitle">
+      JWT認証付きタスク管理アプリ
+    </p>
 
-<p>
-Node.js・Express・SQLiteを使用した、
-認証機能付きCRUDタスク管理アプリケーションです。
-</p>
+    <p>
+      Node.js・Express・SQLiteを使用した、
+      認証機能付きCRUDタスク管理アプリケーションです。
+    </p>
 
+    <div class="hero-buttons">
 
-<div class="hero-buttons">
+      <a
+        href="https://task-manager-app-two-omega.vercel.app"
+        class="btn"
+        target="_blank">
+        Demoを見る
+      </a>
 
-<a href="https://task-manager-app-two-omega.vercel.app"
-class="btn"
-target="_blank">
-Demoを見る
-</a>
+      <a
+        href="https://github.com/ktworksdev/task-manager-app"
+        class="btn secondary"
+        target="_blank">
+        GitHub Repository
+      </a>
 
+    </div>
 
-<a href="https://github.com/ktworksdev/task-manager-app"
-class="btn secondary"
-target="_blank">
-
-GitHub Repository
-
-</a>
-
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
 
+
 <!-- =========================
- Overview
+     Overview
+========================= -->
+
+<section class="fade-in">
+
+  <h2>📖 アプリ概要</h2>
+
+  <p>
+    このプロジェクトは、JWT認証を利用した
+    タスク管理Webアプリケーションです。
+  </p>
+
+  <p>
+    ユーザー登録・ログイン機能を実装し、
+    ログイン後はJWTによる認証を利用して
+    ユーザー単位で独立したタスク管理を行えます。
+  </p>
+
+  <p>
+    フロントエンドとバックエンドを分離した構成で開発し、
+    REST APIによる通信設計を採用しています。
+  </p>
+
+</section>
+
+
+
+
+<!-- =========================
+     Purpose
 ========================= -->
 
 <section>
 
-<h2>
-📖 アプリ概要
-</h2>
+  <h2>🎯 制作目的</h2>
 
+  <p>
+    Node.jsによるWebアプリ開発、
+    Express Router、
+    JWT認証、
+    REST API設計、
+    データベース操作など、
+    実務に近い開発経験を目的として制作しました。
+  </p>
 
-<p>
-このプロジェクトは、JWT認証を利用した
-タスク管理Webアプリケーションです。
-</p>
-
-
-<p>
-ユーザー登録・ログイン機能を実装し、
-ログイン後はJWTによる認証を利用して
-ユーザー単位で独立したタスク管理を行えます。
-</p>
-
-
-<p>
-フロントエンドとバックエンドを分離した構成で開発し、
-REST APIによる通信設計を採用しています。
-</p>
-
+  <p>
+    単純なCRUDアプリではなく、
+    認証・権限管理・API設計・テストまで含めた
+    実践的なアプリケーション構成を目指しました。
+  </p>
 
 </section>
 
 
 
 
-
 <!-- =========================
- Purpose
+     Tech Stack
 ========================= -->
 
 <section>
 
+  <h2>🛠 使用技術</h2>
 
-<h2>
-🎯 制作目的
-</h2>
+  <table class="tech-table">
 
+    <tr>
+      <th>Category</th>
+      <th>Technology</th>
+      <th>Purpose</th>
+    </tr>
 
-<p>
-Node.jsによるWebアプリ開発、
-Express Router、
-JWT認証、
-REST API設計、
-データベース操作など、
-実務に近い開発経験を目的として制作しました。
-</p>
+    <tr>
+      <td>Frontend</td>
+      <td>HTML / CSS / JavaScript</td>
+      <td>ユーザー画面構築</td>
+    </tr>
 
+    <tr>
+      <td>Frontend Communication</td>
+      <td>Fetch API</td>
+      <td>REST API通信</td>
+    </tr>
 
-<p>
-単純なCRUDアプリではなく、
-認証・権限管理・API設計・テストまで含めた
-実践的なアプリケーション構成を目指しました。
-</p>
+    <tr>
+      <td>Backend</td>
+      <td>Node.js / Express</td>
+      <td>APIサーバー構築</td>
+    </tr>
 
+    <tr>
+      <td>Database</td>
+      <td>SQLite3</td>
+      <td>ユーザーデータ・タスク管理</td>
+    </tr>
+
+    <tr>
+      <td>Authentication</td>
+      <td>JWT / bcrypt / dotenv</td>
+      <td>認証・パスワード管理</td>
+    </tr>
+
+  </table>
 
 </section>
 
 
 
 
-
 <!-- =========================
- Tech Stack
+     Features
 ========================= -->
 
 <section>
 
+  <h2>✨ 主な機能</h2>
 
-<h2>
-🛠 使用技術
-</h2>
+  <div class="feature-grid">
 
+    <div class="card">
 
+      <h3>🔐 JWT認証</h3>
 
-<table class="tech-table">
+      <p>
+        ログイン時にJWTトークンを発行し、
+        認証済みユーザーのみAPIへアクセスできます。
+      </p>
 
-<tr>
-<th>
-Category
-</th>
+    </div>
 
-<th>
-Technology
-</th>
+    <div class="card">
 
-<th>
-Purpose
-</th>
+      <h3>👤 ユーザー管理</h3>
 
-</tr>
+      <p>
+        登録ユーザーごとにデータを分離し、
+        安全なタスク管理を実現しています。
+      </p>
 
+    </div>
 
+    <div class="card">
 
-<tr>
-<td>
-Frontend
-</td>
+      <h3>📝 CRUD操作</h3>
 
-<td>
-HTML / CSS / JavaScript
-</td>
+      <p>
+        タスク作成・取得・更新・削除を実装しています。
+      </p>
 
-<td>
-ユーザー画面構築
-</td>
+    </div>
 
-</tr>
+    <div class="card">
 
+      <h3>🌐 REST API</h3>
 
+      <p>
+        フロントエンドとバックエンドを分離し、
+        APIベースの設計にしています。
+      </p>
 
-<tr>
-<td>
-Frontend Communication
-</td>
+    </div>
 
-<td>
-Fetch API
-</td>
+    <div class="card">
 
-<td>
-REST API通信
-</td>
+      <h3>✅ Validation</h3>
 
-</tr>
+      <p>
+        入力チェック、
+        エラー処理、
+        成功メッセージ表示を実装しています。
+      </p>
 
+    </div>
 
+    <div class="card">
 
-<tr>
-<td>
-Backend
-</td>
+      <h3>📱 Responsive</h3>
 
-<td>
-Node.js / Express
-</td>
+      <p>
+        PC・スマートフォン表示に対応しています。
+      </p>
 
-<td>
-APIサーバー構築
-</td>
+    </div>
 
-</tr>
-
-
-
-<tr>
-<td>
-Database
-</td>
-
-<td>
-SQLite3
-</td>
-
-<td>
-ユーザーデータ・タスク管理
-</td>
-
-</tr>
-
-
-
-<tr>
-<td>
-Authentication
-</td>
-
-<td>
-JWT / bcrypt / dotenv
-</td>
-
-<td>
-認証・パスワード管理
-</td>
-
-</tr>
-
-
-</table>
-
+  </div>
 
 </section>
 
 
 
 
-
-
 <!-- =========================
- Features
+     System Architecture
 ========================= -->
 
 <section>
 
+  <h2>🏗 システム構成図</h2>
 
-<h2>
-✨ 主な機能
-</h2>
+  <div class="architecture">
 
+    <div class="box">
 
+      <h3>Frontend</h3>
 
-<div class="feature-grid">
+      <p>
+        HTML<br>
+        CSS<br>
+        JavaScript<br>
+        Fetch API
+      </p>
 
+    </div>
 
+    <div class="arrow">
+      ↓ API通信
+    </div>
 
-<div class="card">
+    <div class="box">
 
-<h3>
-🔐 JWT認証
-</h3>
+      <h3>Backend</h3>
 
-<p>
-ログイン時にJWTトークンを発行し、
-認証済みユーザーのみAPIへアクセスできます。
-</p>
+      <p>
+        Node.js<br>
+        Express<br>
+        JWT Middleware
+      </p>
 
-</div>
+    </div>
 
+    <div class="arrow">
+      ↓ Database
+    </div>
 
+    <div class="box">
 
+      <h3>Database</h3>
 
-<div class="card">
+      <p>
+        SQLite3
+      </p>
 
-<h3>
-👤 ユーザー管理
-</h3>
+    </div>
 
-<p>
-登録ユーザーごとにデータを分離し、
-安全なタスク管理を実現しています。
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h3>
-📝 CRUD操作
-</h3>
-
-<p>
-タスク作成・取得・更新・削除を実装しています。
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h3>
-🌐 REST API
-</h3>
-
-<p>
-フロントエンドとバックエンドを分離し、
-APIベースの設計にしています。
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h3>
-✅ Validation
-</h3>
-
-<p>
-入力チェック、
-エラー処理、
-成功メッセージ表示を実装しています。
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h3>
-📱 Responsive
-</h3>
-
-<p>
-PC・スマートフォン表示に対応しています。
-</p>
-
-</div>
-
-
-</div>
-
+  </div>
 
 </section>
 
 
 
 
-
-
-
 <!-- =========================
- System Architecture
-========================= -->
-
-
-<section>
-
-
-<h2>
-🏗 システム構成図
-</h2>
-
-
-
-<div class="architecture">
-
-
-<div class="box">
-
-<h3>
-Frontend
-</h3>
-
-<p>
-HTML<br>
-CSS<br>
-JavaScript<br>
-Fetch API
-</p>
-
-</div>
-
-
-
-<div class="arrow">
-↓ API通信
-</div>
-
-
-
-<div class="box">
-
-<h3>
-Backend
-</h3>
-
-<p>
-Node.js<br>
-Express<br>
-JWT Middleware
-</p>
-
-</div>
-
-
-
-<div class="arrow">
-↓ Database
-</div>
-
-
-
-<div class="box">
-
-<h3>
-Database
-</h3>
-
-<p>
-SQLite3
-</p>
-
-</div>
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-
-<!-- =========================
- JWT Flow
-========================= -->
-
-
-<section>
-
-
-<h2>
-🔐 JWT認証の仕組み
-</h2>
-
-
-
-<div class="jwt-flow">
-
-
-<div class="flow-box">
-
-1. ユーザー登録
-
-</div>
-
-
-<div class="flow-arrow">
-↓
-</div>
-
-
-<div class="flow-box">
-
-2. ログイン認証
-
-</div>
-
-
-<div class="flow-arrow">
-↓
-</div>
-
-
-<div class="flow-box">
-
-3. JWT Token発行
-
-</div>
-
-
-<div class="flow-arrow">
-↓
-</div>
-
-
-<div class="flow-box">
-
-4. localStorage保存
-
-</div>
-
-
-<div class="flow-arrow">
-↓
-</div>
-
-
-<div class="flow-box">
-
-5. API Request
-
-<br>
-
-Authorization:
-Bearer Token
-
-</div>
-
-
-
-</div>
-
-
-
-<p>
-
-JWTが有効な場合のみ、
-タスクAPIへのアクセスを許可します。
-
-</p>
-
-
-</section>
-
-<!-- =========================
- Deployment
+     JWT Flow
 ========================= -->
 
 <section>
 
-<h2>
-🌐 デプロイ環境
-</h2>
+  <h2>🔐 JWT認証の仕組み</h2>
 
+  <div class="jwt-flow">
 
-<p>
-本番環境へデプロイし、
-フロントエンド・バックエンド間のAPI通信確認を実施しました。
-</p>
+    <div class="flow-box">
+      1. ユーザー登録
+    </div>
 
+    <div class="flow-arrow">
+      ↓
+    </div>
 
-<table class="tech-table">
+    <div class="flow-box">
+      2. ログイン認証
+    </div>
 
-<tr>
-<th>
-Service
-</th>
+    <div class="flow-arrow">
+      ↓
+    </div>
 
-<th>
-Platform
-</th>
+    <div class="flow-box">
+      3. JWT Token発行
+    </div>
 
-<th>
-Role
-</th>
-</tr>
+    <div class="flow-arrow">
+      ↓
+    </div>
 
+    <div class="flow-box">
+      4. localStorage保存
+    </div>
 
-<tr>
-<td>
-Frontend
-</td>
+    <div class="flow-arrow">
+      ↓
+    </div>
 
-<td>
-Vercel
-</td>
+    <div class="flow-box">
+      5. API Request<br>
+      Authorization:<br>
+      Bearer Token
+    </div>
 
-<td>
-ユーザー操作画面
-</td>
-</tr>
+  </div>
 
-
-<tr>
-<td>
-Backend
-</td>
-
-<td>
-Render
-</td>
-
-<td>
-REST API Server
-</td>
-</tr>
-
-
-<tr>
-<td>
-Database
-</td>
-
-<td>
-SQLite
-</td>
-
-<td>
-データ管理
-</td>
-</tr>
-
-
-</table>
-
-
-<div class="link-box">
-
-<h3>
-Demo URL
-</h3>
-
-
-<p>
-Frontend:
-<br>
-
-<a href="https://task-manager-app-two-omega.vercel.app"
-target="_blank">
-https://task-manager-app-two-omega.vercel.app
-</a>
-
-</p>
-
-
-<p>
-Backend:
-<br>
-
-<a href="https://task-manager-app-am1n.onrender.com"
-target="_blank">
-https://task-manager-app-am1n.onrender.com
-</a>
-
-</p>
-
-
-</div>
-
+  <p>
+    JWTが有効な場合のみ、
+    タスクAPIへのアクセスを許可します。
+  </p>
 
 </section>
 
-
-
-
-
 <!-- =========================
- API
+     Deployment
 ========================= -->
-
 
 <section>
 
+  <h2>🌐 デプロイ環境</h2>
 
-<h2>
-📡 API一覧
-</h2>
+  <p>
+    本番環境へデプロイし、
+    フロントエンド・バックエンド間のAPI通信確認を実施しました。
+  </p>
 
+  <table class="tech-table">
 
-<h3>
-Authentication API
-</h3>
+    <tr>
+      <th>Service</th>
+      <th>Platform</th>
+      <th>Role</th>
+    </tr>
 
+    <tr>
+      <td>Frontend</td>
+      <td>Vercel</td>
+      <td>ユーザー操作画面</td>
+    </tr>
 
-<table class="tech-table">
+    <tr>
+      <td>Backend</td>
+      <td>Render</td>
+      <td>REST API Server</td>
+    </tr>
 
-<tr>
-<th>
-Method
-</th>
+    <tr>
+      <td>Database</td>
+      <td>SQLite</td>
+      <td>データ管理</td>
+    </tr>
 
-<th>
-Endpoint
-</th>
-
-<th>
-Description
-</th>
-
-</tr>
-
-
-<tr>
-<td>
-POST
-</td>
-
-<td>
-/api/auth/register
-</td>
-
-<td>
-ユーザー登録
-</td>
-
-</tr>
+  </table>
 
 
-<tr>
-<td>
-POST
-</td>
+  <div class="link-box">
 
-<td>
-/api/auth/login
-</td>
+    <h3>Demo URL</h3>
 
-<td>
-ログイン
-</td>
+    <p>
+      Frontend:<br>
 
-</tr>
+      <a
+        href="https://task-manager-app-two-omega.vercel.app"
+        target="_blank">
+        https://task-manager-app-two-omega.vercel.app
+      </a>
+    </p>
 
+    <p>
+      Backend:<br>
 
-</table>
+      <a
+        href="https://task-manager-app-am1n.onrender.com"
+        target="_blank">
+        https://task-manager-app-am1n.onrender.com
+      </a>
+    </p>
 
-
-
-
-<h3>
-Tasks API
-</h3>
-
-
-
-<table class="tech-table">
-
-
-<tr>
-<th>
-Method
-</th>
-
-<th>
-Endpoint
-</th>
-
-<th>
-Description
-</th>
-
-</tr>
-
-
-
-<tr>
-<td>
-GET
-</td>
-
-<td>
-/api/tasks
-</td>
-
-<td>
-タスク一覧取得
-</td>
-
-</tr>
-
-
-<tr>
-<td>
-POST
-</td>
-
-<td>
-/api/tasks
-</td>
-
-<td>
-タスク追加
-</td>
-
-</tr>
-
-
-<tr>
-<td>
-PUT
-</td>
-
-<td>
-/api/tasks/:id
-</td>
-
-<td>
-タスク更新
-</td>
-
-</tr>
-
-
-<tr>
-<td>
-DELETE
-</td>
-
-<td>
-/api/tasks/:id
-</td>
-
-<td>
-タスク削除
-</td>
-
-</tr>
-
-
-</table>
-
-
+  </div>
 
 </section>
 
 
 
 
-
-
-
 <!-- =========================
- Improvements
+     API
 ========================= -->
-
 
 <section>
 
-
-<h2>
-💡 工夫した点
-</h2>
+  <h2>📡 API一覧</h2>
 
 
+  <h3>Authentication API</h3>
 
-<div class="card-list">
+  <table class="tech-table">
 
+    <tr>
+      <th>Method</th>
+      <th>Endpoint</th>
+      <th>Description</th>
+    </tr>
 
-<div class="card">
+    <tr>
+      <td>POST</td>
+      <td>/api/auth/register</td>
+      <td>ユーザー登録</td>
+    </tr>
 
-<h3>
-JWT Middleware
-</h3>
+    <tr>
+      <td>POST</td>
+      <td>/api/auth/login</td>
+      <td>ログイン</td>
+    </tr>
 
-<p>
-Middlewareによる認証処理を分離し、
-保守しやすい構成にしました。
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>
-Password Security
-</h3>
-
-<p>
-bcryptを利用してパスワードを安全に管理しています。
-</p>
-
-</div>
+  </table>
 
 
 
-<div class="card">
+  <h3>Tasks API</h3>
 
-<h3>
-REST API設計
-</h3>
+  <table class="tech-table">
 
-<p>
-Resource単位でAPIを設計し、
-フロントエンドとの役割分担を明確化しました。
-</p>
+    <tr>
+      <th>Method</th>
+      <th>Endpoint</th>
+      <th>Description</th>
+    </tr>
 
-</div>
+    <tr>
+      <td>GET</td>
+      <td>/api/tasks</td>
+      <td>タスク一覧取得</td>
+    </tr>
 
+    <tr>
+      <td>POST</td>
+      <td>/api/tasks</td>
+      <td>タスク追加</td>
+    </tr>
 
+    <tr>
+      <td>PUT</td>
+      <td>/api/tasks/:id</td>
+      <td>タスク更新</td>
+    </tr>
 
-<div class="card">
+    <tr>
+      <td>DELETE</td>
+      <td>/api/tasks/:id</td>
+      <td>タスク削除</td>
+    </tr>
 
-<h3>
-Testing
-</h3>
-
-<p>
-仕様書を作成し、
-本番環境で動作確認を実施しました。
-</p>
-
-</div>
-
-
-
-</div>
-
+  </table>
 
 </section>
 
 
 
 
-
-
-
 <!-- =========================
- Test
+     Improvements
 ========================= -->
-
 
 <section>
 
+  <h2>💡 工夫した点</h2>
 
-<h2>
-🧪 テスト結果
-</h2>
-
+  <div class="card-list">
 
 
-<div class="test-result">
+    <div class="card">
+
+      <h3>JWT Middleware</h3>
+
+      <p>
+        Middlewareによる認証処理を分離し、
+        保守しやすい構成にしました。
+      </p>
+
+    </div>
 
 
-<h3>
-56 / 58 OK
-</h3>
+    <div class="card">
+
+      <h3>Password Security</h3>
+
+      <p>
+        bcryptを利用してパスワードを安全に管理しています。
+      </p>
+
+    </div>
 
 
-<p>
-本番環境デプロイ後、
-58項目の機能確認テストを実施しました。
-</p>
+    <div class="card">
+
+      <h3>REST API設計</h3>
+
+      <p>
+        Resource単位でAPIを設計し、
+        フロントエンドとの役割分担を明確化しました。
+      </p>
+
+    </div>
 
 
-</div>
+    <div class="card">
+
+      <h3>Testing</h3>
+
+      <p>
+        仕様書を作成し、
+        本番環境で動作確認を実施しました。
+      </p>
+
+    </div>
 
 
-
-<table class="tech-table">
-
-<tr>
-<th>
-項目
-</th>
-
-<th>
-結果
-</th>
-
-</tr>
-
-
-<tr>
-<td>
-CRUD機能
-</td>
-
-<td>
-OK
-</td>
-
-</tr>
-
-
-<tr>
-<td>
-JWT認証
-</td>
-
-<td>
-OK
-</td>
-
-</tr>
-
-
-<tr>
-<td>
-ユーザー分離
-</td>
-
-<td>
-OK
-</td>
-
-</tr>
-
-
-<tr>
-<td>
-API通信
-</td>
-
-<td>
-OK
-</td>
-
-</tr>
-
-
-<tr>
-<td>
-スマホ表示
-</td>
-
-<td>
-OK
-</td>
-
-</tr>
-
-
-<tr>
-<td>
-completed異常系
-</td>
-
-<td>
-今後対応予定
-</td>
-
-</tr>
-
-
-</table>
-
+  </div>
 
 </section>
 
 
 
 
-
-
-
 <!-- =========================
- Screenshots
+     Test
 ========================= -->
-
 
 <section>
 
-
-<h2>
-🖼 スクリーンショット
-</h2>
+  <h2>🧪 テスト結果</h2>
 
 
+  <div class="test-result">
 
-<div class="screenshot-grid">
+    <h3>56 / 58 OK</h3>
 
+    <p>
+      本番環境デプロイ後、
+      58項目の機能確認テストを実施しました。
+    </p>
 
-<div>
-
-<img src="images/login.png"
-alt="Login">
-
-<h3>
-Login
-</h3>
-
-</div>
+  </div>
 
 
 
-<div>
+  <table class="tech-table">
 
-<img src="images/register.png"
-alt="Register">
+    <tr>
+      <th>項目</th>
+      <th>結果</th>
+    </tr>
 
-<h3>
-Register
-</h3>
+    <tr>
+      <td>CRUD機能</td>
+      <td>OK</td>
+    </tr>
 
-</div>
+    <tr>
+      <td>JWT認証</td>
+      <td>OK</td>
+    </tr>
 
+    <tr>
+      <td>ユーザー分離</td>
+      <td>OK</td>
+    </tr>
 
+    <tr>
+      <td>API通信</td>
+      <td>OK</td>
+    </tr>
 
+    <tr>
+      <td>スマホ表示</td>
+      <td>OK</td>
+    </tr>
 
-<div>
+    <tr>
+      <td>completed異常系</td>
+      <td>今後対応予定</td>
+    </tr>
 
-<img src="images/task-list.png"
-alt="Task List">
-
-<h3>
-Task List
-</h3>
-
-</div>
-
-
-
-
-<div>
-
-<img src="images/task-edit.png"
-alt="Edit">
-
-<h3>
-Edit Task
-</h3>
-
-</div>
-
-
-
-</div>
-
+  </table>
 
 </section>
 
-
-
-
-
-
-
 <!-- =========================
- Future
+     Screenshots
 ========================= -->
-
 
 <section>
 
+  <h2>🖼 スクリーンショット</h2>
 
-<h2>
-🚀 今後の改善
-</h2>
+  <div class="screenshot-grid">
+
+    <div>
+
+      <img
+        src="images/login.png"
+        alt="Login">
+
+      <h3>Login</h3>
+
+    </div>
 
 
-<ul>
+    <div>
 
-<li>
-タスク検索機能
-</li>
+      <img
+        src="images/register.png"
+        alt="Register">
 
-<li>
-ソート機能
-</li>
+      <h3>Register</h3>
 
-<li>
-ページネーション
-</li>
+    </div>
 
-<li>
-Reactへの移行
-</li>
 
-<li>
-PostgreSQLへの移行
-</li>
+    <div>
 
-<li>
-completed状態変更API改善
-</li>
+      <img
+        src="images/task-list.png"
+        alt="Task List">
 
-</ul>
+      <h3>Task List</h3>
 
+    </div>
+
+
+    <div>
+
+      <img
+        src="images/task-edit.png"
+        alt="Edit Task">
+
+      <h3>Edit Task</h3>
+
+    </div>
+
+  </div>
 
 </section>
 
 
 
 
+<!-- =========================
+     Future
+========================= -->
+
+<section>
+
+  <h2>🚀 今後の改善</h2>
+
+  <ul>
+
+    <li>タスク検索機能</li>
+
+    <li>ソート機能</li>
+
+    <li>ページネーション</li>
+
+    <li>Reactへの移行</li>
+
+    <li>PostgreSQLへの移行</li>
+
+    <li>completed状態変更API改善</li>
+
+  </ul>
+
+</section>
+
 
 
 
 <!-- =========================
- GitHub
+     GitHub
 ========================= -->
-
 
 <section id="github">
 
-
-<h2>
-🔗 GitHub・Demo
-</h2>
+  <h2>🔗 GitHub・Demo</h2>
 
 
+  <div class="link-box">
 
-<div class="link-box">
+    <h3>GitHub Repository</h3>
 
+    <p>
+      ソースコードはこちらから確認できます。
+    </p>
 
-<h3>
-GitHub Repository
-</h3>
+    <a
+      href="https://github.com/ktworksdev/task-manager-app"
+      class="btn"
+      target="_blank">
+      GitHub Repositoryを見る
+    </a>
 
-
-<p>
-ソースコードはこちらから確認できます。
-</p>
-
-
-<a href="https://github.com/ktworksdev/task-manager-app"
-class="btn"
-target="_blank">
-
-GitHub Repositoryを見る
-
-</a>
-
-
-</div>
+  </div>
 
 
 
+  <div class="link-box">
 
+    <h3>Frontend Demo</h3>
 
-<div class="link-box">
+    <p>
+      ユーザー操作用Web画面
+    </p>
 
+    <a
+      href="https://task-manager-app-two-omega.vercel.app"
+      class="btn"
+      target="_blank">
+      Demoサイトを見る
+    </a>
 
-<h3>
-Frontend Demo
-</h3>
-
-
-<p>
-ユーザー操作用Web画面
-</p>
-
-
-<a href="https://task-manager-app-two-omega.vercel.app"
-class="btn"
-target="_blank">
-
-Demoサイトを見る
-
-</a>
-
-
-</div>
+  </div>
 
 
 
+  <div class="link-box">
 
+    <h3>Backend API</h3>
 
-<div class="link-box">
+    <p>
+      REST API Server
+    </p>
 
+    <a
+      href="https://task-manager-app-am1n.onrender.com"
+      class="btn"
+      target="_blank">
+      API Serverを見る
+    </a>
 
-<h3>
-Backend API
-</h3>
-
-
-<p>
-REST API Server
-</p>
-
-
-<a href="https://task-manager-app-am1n.onrender.com"
-class="btn"
-target="_blank">
-
-API Serverを見る
-
-</a>
-
-
-</div>
-
-
+  </div>
 
 </section>
-
-
-
 
 
 
 
 <!-- =========================
- Author
+     Author
 ========================= -->
-
 
 <section>
 
-
-<h2>
-👤 作者
-</h2>
+  <h2>👤 作者</h2>
 
 
-<p>
-
-Node.js・Express・SQLite・JWTを使用して開発した
-認証付きタスク管理アプリです。
-
-</p>
+  <p>
+    Node.js・Express・SQLite・JWTを使用して開発した
+    認証付きタスク管理アプリです。
+  </p>
 
 
-<p>
-
-Express Router、
-Middleware、
-JWT認証、
-CRUD操作を組み合わせ、
-実務を意識した構成で開発しました。
-
-</p>
+  <p>
+    Express Router、
+    Middleware、
+    JWT認証、
+    CRUD操作を組み合わせ、
+    実務を意識した構成で開発しました。
+  </p>
 
 
-<p>
-
-開発からデプロイ、
-API通信確認、
-テスト仕様作成まで実施し、
-Webアプリケーション開発の一連の流れを経験できる作品です。
-
-</p>
-
+  <p>
+    開発からデプロイ、
+    API通信確認、
+    テスト仕様作成まで実施し、
+    Webアプリケーション開発の一連の流れを経験できる作品です。
+  </p>
 
 </section>
 
 
 
 
-
+<!-- =========================
+     Footer
+========================= -->
 
 <footer>
 
-<p>
-JWT Task Manager App Portfolio
-</p>
+  <p>JWT Task Manager App Portfolio</p>
 
 </footer>
 
 
-
 </body>
+
 </html>
